@@ -393,7 +393,7 @@ for inputfile in args.inputfiles:
         oFILE.writeProperty(vibirs, "IRAreaIntensity")
     vibramans = getCCLib(file, "vibramans")
     if vibramans is not None:
-        oFILE.writeProperty(vibramans, "RamanInvariantIntensity")
+        oFILE.writeProperty(vibramans, "RamanAreaIntensity")
     # write the various properties and their Cartesian derivatives
     moments = getCCLib(file, "moments")
     if moments is not None:
