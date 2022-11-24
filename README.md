@@ -28,7 +28,7 @@ The purposes of this package are:
 
 This will give file1.h5mol, file2.h5mol ... 
 
-- flag '-v' print each property that is copy and stored in the h5mol file
+- flag '-v' print each property that is copied and stored in the h5mol file
 
 - flag '--overwrite' will remove file1.h5mol, ... if they exist.
 Without this flag, the program skip any file that already exists.
