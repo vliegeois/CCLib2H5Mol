@@ -19,7 +19,8 @@ The purposes of this package are:
 ## Usage
 
 - For help
-InitH5Mol-from-QM.py -h 
+
+> InitH5Mol-from-QM.py -h 
 
 - To convert one or more files
 
