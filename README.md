@@ -16,7 +16,7 @@ The purposes of this package are:
 - to be able to use DrawMol, ... to visualize the molecular properties evaluated by all the quantum chemistry codes supported by cclib through the intermediate step of converting the data to h5mol (HDF5 format).
 - to store properties from various sources in a common container that is more compact and still easily readable, specially in python.
 
-##Usage
+## Usage
 
 - For help
 InitH5Mol-from-QM.py -h 
