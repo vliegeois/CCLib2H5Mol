@@ -401,7 +401,7 @@ for inputfile in args.inputfiles:
     if vibdisps is not None and vibfreqs is not None:
         if masses is None:
             # get the mass of the most abundant isotope
-            masses = [mostAbundantIsotopicMass(atnumber) for xatnumber in file.atomnos]
+            masses = [mostAbundantIsotopicMass(atnumber) for atnumber in file.atomnos]
         oFILE.writeVibrationalModes(vibdisps, vibfreqs, masses)
     vibirs = getCCLib(file, "vibirs")
     if vibirs is not None:
