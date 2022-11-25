@@ -6,6 +6,7 @@ import numpy
 import math
 import h5py
 from pathlib import Path
+from periodictable import elements
 
 #FIXME
 # Check for ecd spectrum
@@ -100,6 +101,17 @@ def get_order(size, natoms):
     size = (3*Natoms) **order
     """
     return int(math.log(size) /math.log(3*natoms))
+
+def isotopicMassesAndAbundances(atnum):
+    element = elements[atnum]
+    masses = [(iso.mass, iso.abundance) for iso in element]
+    masses.sort(key=lambda x: x[1], reverse=True)
+    return masses
+
+def mostAbundantIsotopicMass(atnum):
+    masses = isotopicMassesAndAbundances(atnum)
+    mostAbundant = masses[0]
+    return mostAbundant[0]
 
 class WriteHDF5(object):
 
@@ -386,7 +398,10 @@ for inputfile in args.inputfiles:
     # write the modes of vibration
     vibdisps = getCCLib(file, "vibdisps")
     vibfreqs = getCCLib(file, "vibfreqs")
-    if vibdisps is not None and vibfreqs is not None and masses is not None:
+    if vibdisps is not None and vibfreqs is not None:
+        if masses is None:
+            # get the mass of the most abundant isotope
+            masses = [mostAbundantIsotopicMass(atnumber) for xatnumber in file.atomnos]
         oFILE.writeVibrationalModes(vibdisps, vibfreqs, masses)
     vibirs = getCCLib(file, "vibirs")
     if vibirs is not None:
