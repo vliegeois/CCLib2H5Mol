@@ -358,10 +358,11 @@ for inputfile in args.inputfiles:
     for prop, name in zip(Properties_n, Properties_names):
         p = getCCLib(file, prop)
         if p is not None:
+            natoms = file.natom
             if prop == "grads":
                 # the first index is for geom opt index
+                p = p.reshape((-1, 3*natoms))
                 p = p[-1]
-            natoms = file.natom
             order = get_order(p.size, natoms)
             if order == 1:
                 p = p.ravel()
