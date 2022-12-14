@@ -18,6 +18,7 @@ OPERATORS = {"E":1, "mu":3, "theta":9, "m":3, "r":3, "p":3, "BI":3}
 PROPERTIES = {"energy":"E", "dipole":"mu", "pollen":"mu,mu", "quadrupole":"theta", "magneticdipole":"m", "gtenlen":"mu,m", "aten":"mu,theta", "beta":"mu,mu,mu", "gamma":"mu,mu,mu,mu", "magneticshielding":"BI,m"}
 
 multiplicities = {0:1, 1:3, -1:4, -2:5, 2:6, -3:7, 3:10, -4:9, 4:15, -5:11, 5:21, -6:13, 6:28}
+
 # mult2type = {1:0, 3:1, 4:-1, 5:-2, 6:2, 7:-3, 10:3, 9:-4, 15:4, 11:-5, 21:5, 13:-6, 28:6}
 shelltypes = {"S": 0, "P": 1, "D": 2, "F": 3, "G": 4, "H": 5, "I": 6, "SP": -1}
 
