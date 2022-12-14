@@ -21,6 +21,8 @@ multiplicities = {0:1, 1:3, -1:4, -2:5, 2:6, -3:7, 3:10, -4:9, 4:15, -5:11, 5:21
 # mult2type = {1:0, 3:1, 4:-1, 5:-2, 6:2, 7:-3, 10:3, 9:-4, 15:4, 11:-5, 21:5, 13:-6, 28:6}
 shelltypes = {"S": 0, "P": 1, "D": 2, "F": 3, "G": 4, "H": 5, "I": 6, "SP": -1}
 
+
+
 def getCCLib(file, attribute):
     try:
         return getattr(file, attribute)
